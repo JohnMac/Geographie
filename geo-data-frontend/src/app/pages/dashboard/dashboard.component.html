@@ -1,1 +1,26 @@
-<p>dashboard works!</p>
+<h1>Geografische Gegevens</h1>
+<button routerLink="/form">➕ Nieuw item</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Openbareruimte</th>
+      <th>Huisnummer</th>
+      <th>Woonplaats</th>
+      <th>Postcode</th>
+      <th>Acties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{ item.openbareruimte }}</td>
+      <td>{{ item.huisnummer }}</td>
+      <td>{{ item.woonplaats }}</td>
+      <td>{{ item.postcode }}</td>
+      <td>
+        <button (click)="goToForm(item.id)">✏️ Bewerken</button>
+        <button (click)="deleteRecord(item.id)">🗑 Verwijderen</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
