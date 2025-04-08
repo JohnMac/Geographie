@@ -61,9 +61,9 @@ Update-Database
 - POST /api/v1//GeoData/import
 
 ## Unit Tests 
-### Testproject: Geographie.API.Tests\
+### Testproject: Geographie.API.Tests
 - Unit tests voor de happy flow van de Controller Endpoints die hierboven zijn genoemd
 
 ## Docker
 - Backend container start automatisch bij start van Visual Studio
-- Docker runt met: docker run -p 32771:443 
+- Docker runt met: docker run -p 32771:443 Geographie.API
