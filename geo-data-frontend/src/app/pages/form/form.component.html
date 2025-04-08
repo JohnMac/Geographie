@@ -1,1 +1,119 @@
-<p>form works!</p>
+<h2>{{ isEditMode ? 'Bewerken' : 'Nieuw item toevoegen' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Openbareruimte</mat-label>
+        <input matInput formControlName="openbareruimte" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Huisnummer</mat-label>
+        <input matInput type="number" formControlName="huisnummer" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Huisletter</mat-label>
+        <input matInput formControlName="huisletter" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Huisnummertoevoeging</mat-label>
+        <input matInput formControlName="huisnummertoevoeging" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Postcode</mat-label>
+        <input matInput formControlName="postcode" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Woonplaats</mat-label>
+        <input matInput formControlName="woonplaats" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Gemeente</mat-label>
+        <input matInput formControlName="gemeente" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Provincie</mat-label>
+        <input matInput formControlName="provincie" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nummeraanduiding</mat-label>
+        <input matInput formControlName="nummeraanduiding" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Verblijfsobjectgebruiksdoel</mat-label>
+        <input matInput formControlName="verblijfsobjectgebruiksdoel" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Oppervlakteverblijfsobject</mat-label>
+        <input matInput type="number" formControlName="oppervlakteverblijfsobject" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Verblijfsobjectstatus</mat-label>
+        <input matInput formControlName="verblijfsobjectstatus" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>ObjectId</mat-label>
+        <input matInput formControlName="objectId" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>ObjectType</mat-label>
+        <input matInput formControlName="objectType" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nevenadres</mat-label>
+        <input matInput formControlName="nevenadres" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>PandId</mat-label>
+        <input matInput formControlName="pandId" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Pandstatus</mat-label>
+        <input matInput formControlName="pandstatus" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Pandbouwjaar</mat-label>
+        <input matInput type="number" formControlName="pandbouwjaar" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>X</mat-label>
+        <input matInput type="number" formControlName="x" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Y</mat-label>
+        <input matInput type="number" formControlName="y" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Lon (Longitude)</mat-label>
+        <input matInput type="number" formControlName="lon" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Lat (Latitude)</mat-label>
+        <input matInput type="number" formControlName="lat" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        {{ isEditMode ? 'Opslaan' : 'Toevoegen' }}
+    </button>
+
+    <button mat-button type="button" (click)="cancel()">Annuleren</button>
+</form>

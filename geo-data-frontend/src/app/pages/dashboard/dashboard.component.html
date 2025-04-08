@@ -1,26 +1,40 @@
 <h1>Geografische Gegevens</h1>
-<button routerLink="/form">➕ Nieuw item</button>
+<button mat-raised-button color="primary" routerLink="/form">➕ Nieuw toevoegen</button>
 
-<table>
-  <thead>
-    <tr>
-      <th>Openbareruimte</th>
-      <th>Huisnummer</th>
-      <th>Woonplaats</th>
-      <th>Postcode</th>
-      <th>Acties</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of data">
-      <td>{{ item.openbareruimte }}</td>
-      <td>{{ item.huisnummer }}</td>
-      <td>{{ item.woonplaats }}</td>
-      <td>{{ item.postcode }}</td>
-      <td>
-        <button (click)="goToForm(item.id)">✏️ Bewerken</button>
-        <button (click)="deleteRecord(item.id)">🗑 Verwijderen</button>
-      </td>
-    </tr>
-  </tbody>
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="openbareruimte">
+    <th mat-header-cell *matHeaderCellDef> Openbareruimte </th>
+    <td mat-cell *matCellDef="let item"> {{ item.openbareruimte }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="huisnummer">
+    <th mat-header-cell *matHeaderCellDef> Huisnummer </th>
+    <td mat-cell *matCellDef="let item"> {{ item.huisnummer }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="woonplaats">
+    <th mat-header-cell *matHeaderCellDef> Woonplaats </th>
+    <td mat-cell *matCellDef="let item"> {{ item.woonplaats }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="postcode">
+    <th mat-header-cell *matHeaderCellDef> Postcode </th>
+    <td mat-cell *matCellDef="let item"> {{ item.postcode }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acties">
+    <th mat-header-cell *matHeaderCellDef> Acties </th>
+    <td mat-cell *matCellDef="let item">
+      <button mat-icon-button color="primary" (click)="goToForm(item)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteRecord(item)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
