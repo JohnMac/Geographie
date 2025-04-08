@@ -62,8 +62,8 @@ Update-Database
 
 ## Unit Tests 
 ### Testproject: Geographie.API.Tests\
-- Unit tests voor de happy flow van de Controller Endpoints die hierboven zijn genoemd.
+- Unit tests voor de happy flow van de Controller Endpoints die hierboven zijn genoemd
 
 ## Docker
-- Backend container start automatisch bij start van Visual Studio.
-- Docker runt met: docker run -p 32771:443 .
+- Backend container start automatisch bij start van Visual Studio
+- Docker runt met: docker run -p 32771:443 
